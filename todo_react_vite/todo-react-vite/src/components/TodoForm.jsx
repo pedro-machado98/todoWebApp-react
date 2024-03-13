@@ -12,9 +12,7 @@ const TodoForm = ({ addTodo }) => {
     if(!value) return 
     if(!category) return 
     
-    //adicionar todo
     addTodo(value, category);
-    //limpar campos
     setValue("");
     setCategory("");
   }
@@ -25,12 +23,12 @@ const TodoForm = ({ addTodo }) => {
     
     <div className="todo-form">
         <h2>Criar tarefa:</h2>
-        <form onSubmit={handleSubmit}>
+        <form id='todoSimpleForm' onSubmit={handleSubmit}>
             <input 
-            type="text" 
-            placeholder='Digite o Titulo' 
-            value = {value}
-            onChange={(e) => setValue(e.target.value)}
+              type="text" 
+              placeholder='Digite o Titulo' 
+              value = {value}
+              onChange={(e) => setValue(e.target.value)}
             />
             <select value={category} onChange={(e) => setCategory(e.target.value)}>
               <option value = '' > Selecione uma Categoria</option>
